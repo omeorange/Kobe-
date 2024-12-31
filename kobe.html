@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高考加油孩子们</title>
+	<style>
+        .countdown {
+            text-align: center;
+            position : relative;
+            top: 50px
+        }
+           
+        
+		.kobe {
+            width: 100px;
+            height: 100%;
+            /* transform: translateY(50px); */	
+			float: center;
+			margin:0 10px 10px 0
+        }
+		* {
+			overflow:auto;
+			font-size: 5vmin;
+			font-weight: bold;
+			margin: 0px;
+			padding: 0px;
+        }
+        </style>
+        	<audio controls>
+                <source src="27160110cdcb78ca4b2c90cf48efd9ff_01.mp3" type="audio/mpeg" autoplay loop>
+               .
+              </audio>
+              
+               
+                  
+</head>
+ 
+<body>
+    <div class="countdown">
+        <p class="next">今天是2024年12月30日</p> <!-- 显示日期的元素 -->
+        <p class="title">距离
+			<img class="kobe"  align="middle" src="微信图片_20240604003137.png">
+			+1年元旦还有</p> <!-- 显示标题的元素 -->
+        <p class="clock">
+            <!-- 显示倒计时数值的元素 -->
+            <img src="D:\htm练习" id="day" align="middle" style="width:300px;height:100%;margin:0 ;"><!-- 显示天数的元素 -->
+            <i>天</i> 
+            <img src="#" id="hour" align="middle" style="width:300px;height:100%;margin:0;"><!-- 显示小时数的元素 -->
+            <i>时</i> <!-- 显示冒号分隔符的元素 -->
+        
+            <img src="#" id="minute"align="middle" style="width:300px;height:100%;margin:0 ;"><!-- 显示分钟数的元素 -->
+            <i>分</i> <!-- 显示冒号分隔符的元素 -->
+            <img src="#" id="second" align="middle" style="width:300px;height:100%;margin:0 1;"><!-- 显示,秒数的元素 -->
+            <i>秒</i>
+		</p>
+    </div>
+    <script>
+    // 目标日期
+ 
+    var targetDate = new Date("2025-01-01T00:00:00");
+
+ 
+    // 更新倒计时
+    function updateCountdown() {
+      var now = new Date();
+      var timeLeft = targetDate - now;
+ 
+      // 计算剩余的天、小时、分钟和秒
+      var d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      var h = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var m = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      var s = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+
+
+    const imgDom0= document.querySelector("#day")
+    imgDom0.src = 1+d+".png"
+    const imgDom1= document.querySelector("#hour")
+    imgDom1.src = 1+h+".png"
+    const imgDom2= document.querySelector("#minute")
+    imgDom2.src = 1+m+".png"
+    const imgDom3= document.querySelector("#second")
+    imgDom3.src = 1+s+".png"
+      // 每秒钟更新一次倒计时
+      setTimeout(updateCountdown, 1000);
+    }
+ 
+    // 启动倒计时
+    updateCountdown();
+    // </script>
+ 
+     <script>
+     // 获取日期对象 
+    // 获取div
+  
+        // 选中时分秒
+    const hour = document.querySelector('#hour')
+    const minute = document.querySelector('#minute')
+    const second = document.querySelector('#second')
+    const next = document.querySelector('.next')
+    // 设置定时器，每秒钟更新倒计时数值
+    setInterval(function(){
+      const time = new Date()  // 获取当前时间
+
+      next.innerHTML=`今天是${time.getFullYear()}年${time.getMonth()+1}月${time.getDate()}日`
+
+    },1000)
+    </script>
+
+
+</body>
+ 
+</html>
